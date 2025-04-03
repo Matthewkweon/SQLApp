@@ -1,0 +1,54 @@
+2025-04-03 13:50:54,862 - ERROR - OpenAI API connection error: module 'openai' has no attribute 'OpenAI'
+2025-04-03 13:51:24,637 - ERROR - OpenAI API connection error: module 'openai' has no attribute 'OpenAI'
+2025-04-03 13:51:43,298 - ERROR - OpenAI API connection error: module 'openai' has no attribute 'OpenAI'
+2025-04-03 13:58:14,164 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 13:58:14,165 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 13:58:29,078 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 13:58:29,079 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:01:14,631 - ERROR - OpenAI API connection error: module 'openai' has no attribute 'OpenAI'
+2025-04-03 14:01:48,375 - INFO - Sending prompt to OpenAI with token count: 278
+2025-04-03 14:01:48,375 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:02:10,410 - ERROR - Error describing table: near ".": syntax error
+2025-04-03 14:02:47,862 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:02:47,863 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:03:20,235 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:03:20,235 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:03:35,333 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:03:35,333 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:04:08,289 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:04:08,289 - ERROR - OpenAI API error: 'NoneType' object has no attribute 'chat'
+2025-04-03 14:07:30,190 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:07:30,190 - ERROR - OpenAI API error: module 'openai' has no attribute 'chat'
+2025-04-03 14:08:43,966 - ERROR - Unexpected error: name 'openai_client' is not defined
+2025-04-03 14:09:10,449 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:09:10,450 - ERROR - OpenAI API error: name 'openai_client' is not defined
+2025-04-03 14:09:41,006 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:09:41,006 - ERROR - OpenAI API error: module 'openai' has no attribute 'chat'
+2025-04-03 14:10:25,109 - INFO - Sending prompt to OpenAI with token count: 274
+2025-04-03 14:10:25,109 - ERROR - OpenAI API error: module 'openai' has no attribute 'chat'
+2025-04-03 14:11:22,959 - INFO - Sending prompt to OpenAI with token count: 279
+2025-04-03 14:11:22,960 - ERROR - OpenAI API error: module 'openai' has no attribute 'chat'
+2025-04-03 14:17:28,019 - INFO - Sending prompt to OpenAI with token count: 274
+2025-04-03 14:17:28,019 - ERROR - OpenAI API error: module 'openai' has no attribute 'chat'
+2025-04-03 14:23:25,814 - INFO - Sending prompt to OpenAI with token count: 280
+2025-04-03 14:23:31,750 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT region, COUNT(*) as count 
+FROM sales_data 
+GROUP BY region 
+ORDER BY count DESC 
+LIMIT 1;
+```
+
+Explanation: 
+This query counts the number of rows for each unique 'region' in the 'sales_data' table, which represents the number of sales made in each region. It then orders these counts in descending order and returns the region with the highest count. This region is the most used region in terms of sales.
+2025-04-03 14:25:47,051 - INFO - Sending prompt to OpenAI with token count: 282
+2025-04-03 14:25:54,255 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT region, SUM(amount) as total_sales_amount
+FROM sales_data
+GROUP BY region;
+```
+
+Explanation: 
+This SQL query calculates the total sales amount for each region. The `SUM(amount)` function is used to add up all the sales amounts for each unique region. The `GROUP BY` clause is used to group the results by the region column, so we get a separate total for each region.

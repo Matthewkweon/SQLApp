@@ -1,0 +1,11 @@
+date,product,region,quantity,amount
+2023-01-15,Laptop,North,5,4500.00
+2023-01-20,Monitor,South,10,2500.00
+2023-01-25,Keyboard,East,20,1000.00
+2023-02-05,Mouse,West,50,1250.00
+2023-02-10,Laptop,South,3,2700.00
+2023-02-15,Monitor,North,8,2000.00
+2023-03-01,Printer,East,2,600.00
+2023-03-05,Laptop,West,4,3600.00
+2023-03-10,Headphones,South,15,750.00
+2023-03-15,Keyboard,North,25,1250.00
