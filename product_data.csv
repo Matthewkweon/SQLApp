@@ -1,0 +1,6 @@
+ProductID,ProductName,Category,Price,StockQuantity
+1,Widget A,Widgets,19.99,100
+2,Widget B,Widgets,24.99,50
+3,Gadget X,Gadgets,39.99,80
+4,Gadget Y,Gadgets,49.99,60
+5,Accessory Z,Accessories,9.99,150

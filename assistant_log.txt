@@ -52,3 +52,54 @@ GROUP BY region;
 
 Explanation: 
 This SQL query calculates the total sales amount for each region. The `SUM(amount)` function is used to add up all the sales amounts for each unique region. The `GROUP BY` clause is used to group the results by the region column, so we get a separate total for each region.
+2025-04-03 18:11:15,987 - INFO - Sending prompt to OpenAI with token count: 409
+2025-04-03 18:11:23,298 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT * FROM product_data WHERE Category = 'Gadgets';
+```
+
+Explanation: 
+This SQL query selects all columns (indicated by the asterisk *) from the 'product_data' table where the 'Category' column equals 'Gadgets'. This will return a list of all products in the 'Gadgets' category.
+2025-04-03 18:12:36,250 - INFO - Sending prompt to OpenAI with token count: 417
+2025-04-03 18:12:41,142 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT 
+    (SELECT COUNT(*) FROM sales_data) AS sales_data_count,
+    (SELECT COUNT(*) FROM product_data) AS product_data_count;
+```
+
+Explanation: 
+This query counts the number of rows in both the 'sales_data' and 'product_data' tables. The result will be two numbers, one for each table, indicating the total number of inputs (rows) in each. The user can then compare these two numbers to determine which table has a greater number of inputs.
+2025-04-03 18:14:11,107 - INFO - Sending prompt to OpenAI with token count: 553
+2025-04-03 18:14:18,895 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT pd.Category, SUM(sd.amount) as TotalRevenue
+FROM sales_data sd
+JOIN product_data pd ON sd.product = pd.ProductName
+GROUP BY pd.Category;
+```
+
+Explanation: 
+This SQL query joins the `sales_data` table and the `product_data` table on the product name. It then groups the data by product category and calculates the total revenue for each category by summing the `amount` column from the `sales_data` table. The result is a list of product categories along with their respective total revenues.
+
+Important:
+This query assumes that the `product` column in the `sales_data` table corresponds to the `ProductName` column in the `product_data` table. If this is not the case, the query cannot be answered with the available schema.
+2025-04-03 18:14:44,468 - INFO - Sending prompt to OpenAI with token count: 560
+2025-04-03 18:14:50,781 - INFO - Received response from OpenAI: SQL: 
+```sql
+SELECT 
+    product_data.ProductName, 
+    SUM(orders.Quantity) as TotalQuantitySold
+FROM 
+    orders
+INNER JOIN 
+    product_data ON orders.ProductID = product_data.ProductID
+GROUP BY 
+    orders.ProductID
+ORDER BY 
+    TotalQuantitySold DESC
+LIMIT 1;
+```
+
+Explanation: 
+This query first joins the 'orders' table with the 'product_data' table on the 'ProductID' column. It then groups the results by 'ProductID' and calculates the total quantity sold for each product using the SUM function. The results are ordered in descending order by the total quantity sold, and the query returns the product with the highest total quantity sold. The LIMIT 1 clause ensures that only the top result is returned.

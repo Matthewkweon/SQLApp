@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 from tabulate import tabulate
 import openai
-import tiktoken  # pip install tiktoken
+import tiktoken  
 import getpass
 from dotenv import load_dotenv
 
